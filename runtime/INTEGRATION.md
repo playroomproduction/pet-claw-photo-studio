@@ -22,7 +22,7 @@ Animation layout was accepted on one LG webOS 11.2.0 device. The generalized ima
 ## Use Claude / ChatGPT to help install
 
 Full step-by-step guide and bilingual copy/paste prompt:
-https://github.com/bypinkland-mi/pet-claw-photo-studio/blob/main/INSTALL_WITH_AI.md
+https://github.com/playroomproduction/pet-claw-photo-studio/blob/main/INSTALL_WITH_AI.md
 
 This ZIP is theme assets, not the full launcher or an IPK. An assistant with local
 file/Terminal access can obtain the pinned LG launcher source above, apply these
@@ -35,7 +35,7 @@ Copy this prompt, granting your assistant local access to this ZIP:
 ```text
 Help me apply this Pet Claw theme ZIP to LG webOS CleanYourTV and install it.
 Read the complete guide at
-https://github.com/bypinkland-mi/pet-claw-photo-studio/blob/main/INSTALL_WITH_AI.md
+https://github.com/playroomproduction/pet-claw-photo-studio/blob/main/INSTALL_WITH_AI.md
 First check your local tool access, my computer OS, TV model/webOS, my TV IP,
 and whether I already have a launcher. Obtain the guide's pinned upstream source
 or back up my existing source in a separate working copy. Read its scripts before
@@ -50,8 +50,9 @@ running readback separately from my TV visual/remote/app-opening confirmation.
 Explain reopening the launcher, rollback and Developer Mode expiry.
 ```
 
-繁中：先讀以上guide，將ZIP交畀有本機檔案／Terminal權限嘅Claude／ChatGPT，
-請佢核對你部電腦同LG、取得指定upstream並備份，按呢份README加入主題，
-保留launcher原有HTML/scripts，再用LG官方工具打包安裝。LG登入、Developer
-Mode／Key Server、配對碼同電視連線批准由你親自處理。純聊天版AI冇本機
-權限時只會帶你逐步執行；ZIP包含你揀嘅相，傳入聊天亦會分享畀該服務。
+繁體中文：請先閱讀上述教學，將 ZIP 提供給具有本機檔案與終端機權限的
+Claude／ChatGPT。請 AI 核對電腦環境及 LG 電視型號，取得指定上游版本並
+建立備份，再依照此 README 加入主題。請保留啟動器原有 HTML 與腳本，
+使用 LG 官方工具打包及安裝。LG 登入、Developer Mode、Key Server、
+配對碼與電視連線批准，須由您親自處理。僅具聊天功能的 AI 只能逐步提供
+操作指示；ZIP 包含您選擇的相片，上傳至聊天服務也會分享這些圖片。

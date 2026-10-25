@@ -4,7 +4,7 @@ This guide takes you from four photos to a themed **LG webOS CleanYourTV launche
 
 ## 1. Make your theme
 
-1. Download `index.html` from the [latest release](https://github.com/bypinkland-mi/pet-claw-photo-studio/releases/latest). Open that downloaded file in a desktop browser. GitHub's source viewer does not run the editor.
+1. Download `index.html` from the [latest release](https://github.com/playroomproduction/pet-claw-photo-studio/releases/latest). Open that downloaded file in a desktop browser. GitHub's source viewer does not run the editor.
 2. Choose four PNG, JPG or WebP images, enter names and adjust Crop & framing. Transparent cutouts keep their transparency; ordinary photos can use Circle crop. There is no automatic background removal.
 3. Click **CleanYourTV theme ZIP**. Keep the downloaded `pet-claw-cleanyourtv-theme.zip`.
 
@@ -26,7 +26,7 @@ Attach or grant local access to `pet-claw-cleanyourtv-theme.zip`, then paste:
 Help me install my four-photo Pet Claw theme into CleanYourTV on my LG webOS TV.
 
 Read this guide first:
-https://github.com/bypinkland-mi/pet-claw-photo-studio/blob/main/INSTALL_WITH_AI.md
+https://github.com/playroomproduction/pet-claw-photo-studio/blob/main/INSTALL_WITH_AI.md
 
 I have exported pet-claw-cleanyourtv-theme.zip. First ask for only the missing
 information: computer OS, TV model/webOS version, the theme ZIP location, my own
@@ -98,38 +98,49 @@ After installation, open the launcher from the TV's Apps list. Where supported, 
 | Home opens LG Home | Expected: the theme customizes a launcher app, not the TV's Home mapping. |
 | App disappears after some time | Check Developer Mode/session status against LG's current guide. |
 
-## 繁體中文：貼畀 Claude／ChatGPT
+## 繁體中文：貼給 Claude／ChatGPT 的安裝指令
 
-先下載 Release 嘅 `index.html`，換四張相，再按 **CleanYourTV theme ZIP**。將 ZIP 放喺 AI 有權讀取嘅本機 project folder，貼以下指令。純聊天版 AI 如果冇本機工具，只可以帶你逐步執行，唔會自動連到電視。ZIP 包含你揀嘅相，傳入網上聊天亦等於分享畀該服務。
+請先從 Release 下載 `index.html`，替換四張相片，再按 **CleanYourTV theme ZIP** 匯出主題。將 ZIP 放在 AI 已獲授權存取的本機專案資料夾中，然後貼上下方指令。若使用的 AI 僅提供聊天功能，無法存取本機檔案或終端機，您需要依照指示自行執行命令。ZIP 包含您選擇的圖片；將 ZIP 上傳至網路聊天服務，也會將這些圖片分享給該服務。
 
 ```text
-請幫我將 Pet Claw 四寵物主題裝入 LG webOS 版 CleanYourTV。
-先讀：https://github.com/bypinkland-mi/pet-claw-photo-studio/blob/main/INSTALL_WITH_AI.md
+請協助我將 Pet Claw 四張寵物相片主題，整合至 LG webOS 版 CleanYourTV 並安裝。
+請先閱讀：
+https://github.com/playroomproduction/pet-claw-photo-studio/blob/main/INSTALL_WITH_AI.md
 
-我已有 pet-claw-cleanyourtv-theme.zip。先確認你有冇本機檔案／Terminal權限，
-再問缺少嘅資料：我嘅電腦OS、LG型號／webOS版本、ZIP位置、我部TV嘅IP，
-同埋有冇現有CleanYourTV。冇本機工具就逐步畀command我做，唔好話已安裝。
+我已匯出 pet-claw-cleanyourtv-theme.zip。請先確認您是否具備本機檔案及終端機
+存取權限，再詢問缺少的資料：電腦作業系統、LG 電視型號與 webOS 版本、ZIP
+所在位置、我的電視區域網路 IP，以及是否已有 CleanYourTV 原始碼或已安裝版本。
+如果您只有聊天功能，請逐步提供命令讓我自行執行，不要聲稱已完成安裝。
 
-使用guide指定嘅LG webOS upstream及pinned commit，先讀README同install.sh；
-macOS以外要核對支援，唔好直接照搬。已有source先備份並另開working copy，
-冇就另開folder下載upstream，唔好覆蓋我原本啲檔。
+請使用教學指定的 LG webOS 上游專案與固定 commit，先閱讀 README、install.sh
+及相關腳本。macOS 以外的環境必須另行確認相容性，不要直接套用相同腳本。
+若已有原始碼，請先備份並建立獨立工作副本；若沒有，請在新資料夾取得上游
+原始碼。不要覆蓋我的既有檔案、重設工作目錄，或複製他人的電視裝置資料。
 
-按ZIP嘅README加入claw.css、claw.js、pet-theme-config.js、pet-heads.png，
-保留launcher原有HTML、app scripts及appinfo，標籤只加一次。
-唔好將Photo Studio index.html／wallpaper HTML覆蓋launcher嘅app/index.html。
-先本機預覽整合後畫面，再用我自己TV同步出嚟嘅app IDs／icons，保留licenses。
+請依照 ZIP 內的 README 加入 claw.css、claw.js、pet-theme-config.js 與
+pet-heads.png。將主題 CSS 放在原有 CSS 之後，並在原有腳本之後依序載入
+pet-theme-config.js、claw.js；每個標籤只加入一次。請保留啟動器原有 HTML、
+應用程式腳本、appinfo.json 與授權聲明，不要使用 Photo Studio 的 index.html
+或獨立桌布 HTML 覆蓋啟動器的 app/index.html。
 
-用LG官方Developer Mode／CLI配對、打包IPK同安裝，只更新已核對嘅launcher。
-LG登入、開Dev Mode、重開TV、Key Server、連線允許同配對碼由我親自處理；
-密碼／passphrase只喺TV或本機互動Terminal輸入，唔好貼返chat或公開設定。
-唔好root、reset、改firmware、移除原廠app，亦唔好自動裝Home watcher。
+請先在本機預覽整合後的畫面，再使用從我自己的電視同步取得的應用程式 ID
+與圖示。請保留回復用的原始碼及安裝包，並說明此次安裝的應用程式 ID、版本，
+以及是否會更新既有啟動器。不要將配對金鑰、裝置設定或應用程式清單公開。
 
-完成後分開驗證：打包、安裝版本／執行readback、我親眼確認動畫／遙控、開App。
-Home仍返LG屬正常。最後畀我重開launcher、還原舊版同延長Developer Mode嘅方法，
-清楚列出實測同仍待我操作嘅項目，唔好將browser preview當TV已驗收。
+請使用 LG 官方 Developer Mode 與 webOS CLI 配對、打包 IPK 及安裝，僅更新
+已確認的啟動器。LG 登入、啟用 Dev Mode、重新啟動電視、開啟 Key Server、
+批准連線及輸入配對碼，由我親自處理。密碼與 passphrase 僅在電視或本機
+互動式終端機輸入，不要貼回聊天、截圖、共用紀錄或公開設定檔。
+請勿取得 root 權限、恢復原廠設定、修改韌體、移除系統應用程式，或自動
+安裝 Home 轉向常駐服務。若環境不支援，請明確說明，不要自行改用其他方式。
+
+完成後請分別驗證：IPK 打包、安裝版本及執行狀態讀回，以及我在電視上確認
+動畫、遙控操作與應用程式啟動。按 Home 返回 LG 首頁屬預期行為。
+請最後提供重新開啟啟動器、還原舊版及延長 Developer Mode 時間的方法，
+清楚區分實測結果與仍需我操作的項目，不要將瀏覽器預覽視為電視驗收完成。
 ```
 
-你需要自己喺電視安裝 Developer Mode、登入 LG、開兩個開關並重啟、批准連線同確認畫面。電腦要同 TV 喺同一網絡。主題唔會自動取代 Home，Developer Mode 有到期限制。
+您需要在電視上安裝 Developer Mode、登入 LG、啟用 Dev Mode Status、重新啟動後開啟 Key Server，並批准連線及確認畫面。電腦與電視必須位於同一區域網路。主題不會自動取代 Home 按鈕的行為；Developer Mode 也有使用期限。
 
 ## Verification boundary
 

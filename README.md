@@ -2,11 +2,11 @@
 
 Turn four pet portraits into an animated claw-machine wallpaper. Choose your own PNG, JPG or WebP files, add names, adjust the crop and zoom, then download a standalone wallpaper or a CleanYourTV theme ZIP.
 
-[![Pet claw-machine demonstration](demo/poster.png)](https://github.com/bypinkland-mi/pet-claw-photo-studio/releases/download/v1.0.1/pet-claw-demo.mp4)
+[![Pet claw-machine demonstration](demo/poster.png)](https://github.com/playroomproduction/pet-claw-photo-studio/releases/download/v1.0.2/pet-claw-demo.mp4)
 
-[Download v1.0.1](https://github.com/bypinkland-mi/pet-claw-photo-studio/releases/tag/v1.0.1) · [Watch the 48-second demo](https://github.com/bypinkland-mi/pet-claw-photo-studio/releases/download/v1.0.1/pet-claw-demo.mp4)
+[Download v1.0.2](https://github.com/playroomproduction/pet-claw-photo-studio/releases/tag/v1.0.2) · [Watch the 48-second demo](https://github.com/playroomproduction/pet-claw-photo-studio/releases/download/v1.0.2/pet-claw-demo.mp4)
 
-Version: **v1.0.1**. No account, API key, payment or installation is required for the editor.
+Version: **v1.0.2**. No account, API key, payment or installation is required for the editor.
 
 ## Put it on your LG TV with Claude / ChatGPT
 
@@ -14,7 +14,7 @@ Version: **v1.0.1**. No account, API key, payment or installation is required fo
 
 The flow is **four photos → theme ZIP → Claude/ChatGPT with local tools → combine with the LG launcher → build/install IPK → confirm on your TV**. This download is the editor/theme; the full launcher is obtained separately from the credited upstream. A plain chat without computer access can guide you, but cannot install it for you.
 
-**繁中：[安裝步驟＋可直接貼畀 Claude／ChatGPT 嘅指令](INSTALL_WITH_AI.md)**。先用 editor 換四張相、匯出 theme ZIP，再交畀有本機權限嘅 AI 協助整合。LG 登入、Developer Mode 同電視確認由你操作。
+**繁體中文：[安裝步驟與可直接貼給 Claude／ChatGPT 的指令](INSTALL_WITH_AI.md)**。請先使用編輯器替換四張相片並匯出主題 ZIP，再由具有本機檔案與終端機權限的 AI 協助整合。LG 登入、Developer Mode 設定與電視畫面確認，仍須由您親自操作。
 
 ## Download and use
 
@@ -42,20 +42,20 @@ For LG device testing, use LG's official [Developer Mode guide](https://webostv.
 
 Software and documentation: [MIT](LICENSE), with upstream notices preserved. The launcher lineage is [Gathin's CleanYourTV / tv-vibehack](https://github.com/Gathin23/cleanyourtv) and [OmkarK97's LG webOS port](https://github.com/OmkarK97/webos-vibehack), pinned to `31a518aef23768067975f3ac2e464462a8046bab` for this integration. Bundled wallpaper Outfit font: SIL OFL 1.1. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
-Independent project by byPINKLAND; no affiliation or endorsement by CleanYourTV's authors, LG or OpenAI is implied. Household TV inventories, app logos, connection profiles and keys are excluded.
+Published by Playroom Production; no affiliation or endorsement by CleanYourTV's authors, LG or OpenAI is implied. Household TV inventories, app logos, connection profiles and keys are excluded.
 
 ## 繁體中文快速開始
 
-1. 喺 GitHub Releases 下載 `index.html`，直接用電腦瀏覽器開啟。
-2. 換入四張自己有使用權嘅 PNG／JPG／WebP，輸入名字，再調整位置、縮放同圓形裁切。
-3. 透明 PNG 可保留原有去背效果；一般相片可用圓形裁切，程式唔會自動 AI 去背。
-4. 下載獨立 wallpaper HTML，或者 CleanYourTV theme ZIP。ZIP 係現有 launcher 嘅主題整合素材，唔係更換電視 OS。
+1. 從 GitHub Releases 下載 `index.html`，再使用電腦瀏覽器開啟下載的檔案。
+2. 選擇四張您擁有使用權的 PNG／JPG／WebP 相片，輸入名稱，並調整位置、縮放與圓形裁切。
+3. 透明 PNG 可保留原有去背效果；一般相片可使用圓形裁切。程式不提供自動 AI 去背功能。
+4. 若要在瀏覽器觀看動畫，請下載獨立桌布 HTML；若要套用至電視上的 CleanYourTV，請匯出主題 ZIP，並按照安裝教學進行整合與打包。主題 ZIP 不包含完整啟動器或可直接安裝的 IPK。
 
-相片設計上只喺瀏覽器記憶體處理；下載檔案會包含你揀嘅圖片。預設寵物圖係 AI 生成示範素材，使用範圍見 [MEDIA.md](MEDIA.md)。
+相片會在瀏覽器記憶體中處理；匯出的檔案包含您選擇的圖片。預設寵物插圖為 AI 生成的示範素材，使用範圍請參閱 [MEDIA.md](MEDIA.md)。
 
 ## Release verification
 
-v1.0.1 adds installation documentation, AI prompts, and the same instructions inside newly exported theme ZIPs. It does not bundle the launcher or change TV control behavior. The editor export was rechecked for the new README; the broader UI checks below are the v1.0.0 baseline.
+v1.0.2 publishes the project through the playroomproduction account and uses standard Traditional Chinese in the guide and exported instructions. v1.0.1 introduced the AI installation guide. It does not bundle the launcher or change TV control behavior. The editor export was rechecked for the new README; the broader UI checks below are the v1.0.0 baseline.
 
 Checked on 25 October 2026 in a desktop Chromium-based browser: four synthetic PNG replacements, name editing (including HTML-like input rendered literally), zoom/pan/circle controls, pause/resume, HTML and ZIP downloads, and reload returning to the samples. The downloaded custom HTML was byte-for-byte identical to the document rendered in the preview. Both default and custom ZIPs passed manifest, notice-byte, PNG-size and CRC checks. Source allowlist/privacy checks passed; inline scripts passed JavaScript syntax checks.
 

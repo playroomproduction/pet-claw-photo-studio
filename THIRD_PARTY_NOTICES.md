@@ -1,6 +1,6 @@
 # Third-party notices
 
-Pet Claw Photo Studio v1.0.1 separates software, font and demonstration-media permissions.
+Pet Claw Photo Studio v1.0.2 separates software, font and demonstration-media permissions.
 
 ## Launcher lineage — MIT
 

@@ -1,6 +1,6 @@
 # Sample media permission
 
-The software license is in [LICENSE](LICENSE). This file applies only to the bundled sample pet atlas and illustrations, their embedded copies in sample HTML/ZIP files, and the project's sample screenshots and demo video.
+Published through the Playroom Production GitHub account. The software license is in [LICENSE](LICENSE). This file applies only to the bundled sample pet atlas and illustrations, their embedded copies in sample HTML/ZIP files, and the project's sample screenshots and demo video.
 
 The sample pet illustrations are **AI-generated with OpenAI from owner-provided pet reference imagery**, reviewed and prepared by Sammi / byPINKLAND. The owner confirmed that the original four-pet wallpaper/photos may be shared publicly. That confirmation is the source of permission; it is not a claim that a third party independently verified photographic authorship, copyright protection or exclusive rights in AI output.
 
