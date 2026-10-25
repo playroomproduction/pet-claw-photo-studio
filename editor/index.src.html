@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Personalize a pet claw-machine wallpaper with four photos, right in your browser.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; frame-src 'self' blob: data:; connect-src 'none'; media-src blob: data:; font-src data:; object-src 'none'; base-uri 'none'">
+  <title>Pet Claw Photo Studio</title>
+  <style>
+    <!--EDITOR_STYLE-->
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Pet Claw Photo Studio home">
+        <span class="wordmark-mark" aria-hidden="true">✳</span>
+        <span>Pet Claw <span class="wordmark-light">Photo Studio</span></span>
+      </a>
+      <div class="privacy-chip"><span class="privacy-dot" aria-hidden="true"></span> Private by design</div>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">A little keepsake for your favourite faces</p>
+        <div class="intro-row">
+          <div>
+            <h1 id="page-title">Make it <em>yours.</em></h1>
+            <p class="intro-copy">Swap in four portraits, find the right crop, and take your claw-machine wallpaper with you.</p>
+          </div>
+          <p class="local-note"><span aria-hidden="true">✦</span> Photos stay on this device.<br>Downloads contain your images.</p>
+        </div>
+      </section>
+
+      <div class="workspace">
+        <section class="preview-panel panel" aria-labelledby="preview-heading">
+          <div class="panel-heading preview-heading-row">
+            <div>
+              <p class="eyebrow">The finished look</p>
+              <h2 id="preview-heading">Live wallpaper preview</h2>
+            </div>
+            <span class="ratio-pill">16:9 <span aria-hidden="true">·</span> Full HD</span>
+          </div>
+
+          <div class="preview-shell" id="preview-shell">
+            <iframe id="wallpaper-preview" title="Live pet claw-machine wallpaper preview" width="1920" height="1080" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe>
+            <div class="preview-empty" id="preview-empty" hidden>
+              <span class="preview-empty-mark" aria-hidden="true">✳</span>
+              <p>The wallpaper preview will appear here.</p>
+            </div>
+          </div>
+
+          <div class="preview-toolbar">
+            <p class="preview-status" id="preview-status" role="status" aria-live="polite">Preparing your preview…</p>
+            <button class="motion-button" id="motion-toggle" type="button" aria-pressed="false" disabled>
+              <span class="motion-symbol" aria-hidden="true">Ⅱ</span>
+              <span id="motion-label">Pause motion</span>
+            </button>
+          </div>
+
+          <div class="export-area">
+            <div class="export-copy">
+              <h3>Take it with you</h3>
+              <p>Save a standalone wallpaper or a CleanYourTV theme ZIP.</p>
+            </div>
+            <div class="export-actions">
+              <button class="button button-primary" type="button" data-export="html" disabled>
+                <span aria-hidden="true">↓</span> <span data-button-label>Download wallpaper HTML</span>
+              </button>
+              <button class="button button-secondary" type="button" data-export="zip" disabled>
+                <span aria-hidden="true">↓</span> <span data-button-label>CleanYourTV theme ZIP</span>
+              </button>
+            </div>
+            <p class="export-status" id="export-status" role="status" aria-live="polite"></p>
+          </div>
+        </section>
+
+        <section class="editor-panel panel" aria-labelledby="portraits-heading">
+          <div class="panel-heading editor-heading-row">
+            <div>
+              <p class="eyebrow">Your little crew</p>
+              <h2 id="portraits-heading">Four portraits</h2>
+            </div>
+            <span class="slot-count">04 <span>slots</span></span>
+          </div>
+          <p class="section-help">Choose a photo and give each pet a name. Use photos you own or have permission to use.</p>
+
+          <div class="portrait-list">
+            <article class="portrait-card" data-photo-index="0">
+              <div class="portrait-card-top"><span class="portrait-number">01</span><span class="sample-badge" data-photo-badge>Sample</span></div>
+              <div class="portrait-main">
+                <div class="portrait-canvas-wrap"><canvas data-photo-canvas width="256" height="256" role="img" aria-label="Portrait 1 photo preview">Sample pet portrait</canvas></div>
+                <div class="portrait-fields">
+                  <label class="field-label" for="pet-name-0">Pet name</label>
+                  <div class="name-input-wrap"><input id="pet-name-0" class="name-input" type="text" maxlength="24" autocomplete="off" placeholder="Pet name" data-pet-name><span class="character-count" data-name-count>0/24</span></div>
+                  <label class="file-picker" for="pet-photo-0"><span class="file-picker-icon" aria-hidden="true">＋</span> Choose photo<input id="pet-photo-0" type="file" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" aria-describedby="photo-help-0" data-photo-file></label>
+                  <p class="photo-status" id="photo-help-0" data-photo-status role="status" aria-live="polite">PNG, JPG or WebP · up to 10 MB</p>
+                </div>
+              </div>
+              <details class="framing-details">
+                <summary>Crop &amp; framing</summary>
+                <div class="framing-controls">
+                  <div class="range-row"><label for="photo-zoom-0">Zoom</label><output for="photo-zoom-0" data-range-output="zoom">100%</output><input id="photo-zoom-0" type="range" min="0.5" max="3" step="0.01" value="1" data-photo-setting="zoom" aria-label="Portrait 1 zoom"></div>
+                  <div class="range-row"><label for="photo-x-0">Horizontal position</label><output for="photo-x-0" data-range-output="x">0%</output><input id="photo-x-0" type="range" min="-1" max="1" step="0.01" value="0" data-photo-setting="x" aria-label="Portrait 1 horizontal crop position"></div>
+                  <div class="range-row"><label for="photo-y-0">Vertical position</label><output for="photo-y-0" data-range-output="y">0%</output><input id="photo-y-0" type="range" min="-1" max="1" step="0.01" value="0" data-photo-setting="y" aria-label="Portrait 1 vertical crop position"></div>
+                  <label class="toggle-row" for="photo-circle-0"><span><strong>Circle crop</strong><small>Frame this portrait as a circle</small></span><input id="photo-circle-0" type="checkbox" data-photo-setting="circle" aria-label="Use a circle crop for portrait 1"><span class="toggle-track" aria-hidden="true"><span></span></span></label>
+                </div>
+              </details>
+            </article>
+
+            <article class="portrait-card" data-photo-index="1">
+              <div class="portrait-card-top"><span class="portrait-number">02</span><span class="sample-badge" data-photo-badge>Sample</span></div>
+              <div class="portrait-main">
+                <div class="portrait-canvas-wrap"><canvas data-photo-canvas width="256" height="256" role="img" aria-label="Portrait 2 photo preview">Sample pet portrait</canvas></div>
+                <div class="portrait-fields">
+                  <label class="field-label" for="pet-name-1">Pet name</label>
+                  <div class="name-input-wrap"><input id="pet-name-1" class="name-input" type="text" maxlength="24" autocomplete="off" placeholder="Pet name" data-pet-name><span class="character-count" data-name-count>0/24</span></div>
+                  <label class="file-picker" for="pet-photo-1"><span class="file-picker-icon" aria-hidden="true">＋</span> Choose photo<input id="pet-photo-1" type="file" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" aria-describedby="photo-help-1" data-photo-file></label>
+                  <p class="photo-status" id="photo-help-1" data-photo-status role="status" aria-live="polite">PNG, JPG or WebP · up to 10 MB</p>
+                </div>
+              </div>
+              <details class="framing-details">
+                <summary>Crop &amp; framing</summary>
+                <div class="framing-controls">
+                  <div class="range-row"><label for="photo-zoom-1">Zoom</label><output for="photo-zoom-1" data-range-output="zoom">100%</output><input id="photo-zoom-1" type="range" min="0.5" max="3" step="0.01" value="1" data-photo-setting="zoom" aria-label="Portrait 2 zoom"></div>
+                  <div class="range-row"><label for="photo-x-1">Horizontal position</label><output for="photo-x-1" data-range-output="x">0%</output><input id="photo-x-1" type="range" min="-1" max="1" step="0.01" value="0" data-photo-setting="x" aria-label="Portrait 2 horizontal crop position"></div>
+                  <div class="range-row"><label for="photo-y-1">Vertical position</label><output for="photo-y-1" data-range-output="y">0%</output><input id="photo-y-1" type="range" min="-1" max="1" step="0.01" value="0" data-photo-setting="y" aria-label="Portrait 2 vertical crop position"></div>
+                  <label class="toggle-row" for="photo-circle-1"><span><strong>Circle crop</strong><small>Frame this portrait as a circle</small></span><input id="photo-circle-1" type="checkbox" data-photo-setting="circle" aria-label="Use a circle crop for portrait 2"><span class="toggle-track" aria-hidden="true"><span></span></span></label>
+                </div>
+              </details>
+            </article>
+
+            <article class="portrait-card" data-photo-index="2">
+              <div class="portrait-card-top"><span class="portrait-number">03</span><span class="sample-badge" data-photo-badge>Sample</span></div>
+              <div class="portrait-main">
+                <div class="portrait-canvas-wrap"><canvas data-photo-canvas width="256" height="256" role="img" aria-label="Portrait 3 photo preview">Sample pet portrait</canvas></div>
+                <div class="portrait-fields">
+                  <label class="field-label" for="pet-name-2">Pet name</label>
+                  <div class="name-input-wrap"><input id="pet-name-2" class="name-input" type="text" maxlength="24" autocomplete="off" placeholder="Pet name" data-pet-name><span class="character-count" data-name-count>0/24</span></div>
+                  <label class="file-picker" for="pet-photo-2"><span class="file-picker-icon" aria-hidden="true">＋</span> Choose photo<input id="pet-photo-2" type="file" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" aria-describedby="photo-help-2" data-photo-file></label>
+                  <p class="photo-status" id="photo-help-2" data-photo-status role="status" aria-live="polite">PNG, JPG or WebP · up to 10 MB</p>
+                </div>
+              </div>
+              <details class="framing-details">
+                <summary>Crop &amp; framing</summary>
+                <div class="framing-controls">
+                  <div class="range-row"><label for="photo-zoom-2">Zoom</label><output for="photo-zoom-2" data-range-output="zoom">100%</output><input id="photo-zoom-2" type="range" min="0.5" max="3" step="0.01" value="1" data-photo-setting="zoom" aria-label="Portrait 3 zoom"></div>
+                  <div class="range-row"><label for="photo-x-2">Horizontal position</label><output for="photo-x-2" data-range-output="x">0%</output><input id="photo-x-2" type="range" min="-1" max="1" step="0.01" value="0" data-photo-setting="x" aria-label="Portrait 3 horizontal crop position"></div>
+                  <div class="range-row"><label for="photo-y-2">Vertical position</label><output for="photo-y-2" data-range-output="y">0%</output><input id="photo-y-2" type="range" min="-1" max="1" step="0.01" value="0" data-photo-setting="y" aria-label="Portrait 3 vertical crop position"></div>
+                  <label class="toggle-row" for="photo-circle-2"><span><strong>Circle crop</strong><small>Frame this portrait as a circle</small></span><input id="photo-circle-2" type="checkbox" data-photo-setting="circle" aria-label="Use a circle crop for portrait 3"><span class="toggle-track" aria-hidden="true"><span></span></span></label>
+                </div>
+              </details>
+            </article>
+
+            <article class="portrait-card" data-photo-index="3">
+              <div class="portrait-card-top"><span class="portrait-number">04</span><span class="sample-badge" data-photo-badge>Sample</span></div>
+              <div class="portrait-main">
+                <div class="portrait-canvas-wrap"><canvas data-photo-canvas width="256" height="256" role="img" aria-label="Portrait 4 photo preview">Sample pet portrait</canvas></div>
+                <div class="portrait-fields">
+                  <label class="field-label" for="pet-name-3">Pet name</label>
+                  <div class="name-input-wrap"><input id="pet-name-3" class="name-input" type="text" maxlength="24" autocomplete="off" placeholder="Pet name" data-pet-name><span class="character-count" data-name-count>0/24</span></div>
+                  <label class="file-picker" for="pet-photo-3"><span class="file-picker-icon" aria-hidden="true">＋</span> Choose photo<input id="pet-photo-3" type="file" accept="image/png,image/jpeg,image/webp,.png,.jpg,.jpeg,.webp" aria-describedby="photo-help-3" data-photo-file></label>
+                  <p class="photo-status" id="photo-help-3" data-photo-status role="status" aria-live="polite">PNG, JPG or WebP · up to 10 MB</p>
+                </div>
+              </div>
+              <details class="framing-details">
+                <summary>Crop &amp; framing</summary>
+                <div class="framing-controls">
+                  <div class="range-row"><label for="photo-zoom-3">Zoom</label><output for="photo-zoom-3" data-range-output="zoom">100%</output><input id="photo-zoom-3" type="range" min="0.5" max="3" step="0.01" value="1" data-photo-setting="zoom" aria-label="Portrait 4 zoom"></div>
+                  <div class="range-row"><label for="photo-x-3">Horizontal position</label><output for="photo-x-3" data-range-output="x">0%</output><input id="photo-x-3" type="range" min="-1" max="1" step="0.01" value="0" data-photo-setting="x" aria-label="Portrait 4 horizontal crop position"></div>
+                  <div class="range-row"><label for="photo-y-3">Vertical position</label><output for="photo-y-3" data-range-output="y">0%</output><input id="photo-y-3" type="range" min="-1" max="1" step="0.01" value="0" data-photo-setting="y" aria-label="Portrait 4 vertical crop position"></div>
+                  <label class="toggle-row" for="photo-circle-3"><span><strong>Circle crop</strong><small>Frame this portrait as a circle</small></span><input id="photo-circle-3" type="checkbox" data-photo-setting="circle" aria-label="Use a circle crop for portrait 4"><span class="toggle-track" aria-hidden="true"><span></span></span></label>
+                </div>
+              </details>
+            </article>
+          </div>
+
+          <p class="format-note"><strong>Photo notes</strong> Transparent PNG or WebP cutouts keep their transparency. JPGs start with a round crop. No background removal is performed.</p>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <p>Photos are processed locally in your browser and cleared when you close this page.</p>
+      <p>Template code: MIT <span aria-hidden="true">·</span> Upstream credits: <a href="https://github.com/bypinkland-mi/pet-claw-photo-studio" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+    </footer>
+  </div>
+
+  <script>
+    <!--FACTORY_DATA-->
+  </script>
+  <script>
+    <!--FACTORY_SCRIPT-->
+  </script>
+  <script>
+    <!--EDITOR_SCRIPT-->
+  </script>
+</body>
+</html>

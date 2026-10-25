@@ -1,0 +1,95 @@
+/* Four customizable portraits, one local sprite, transform/opacity-only motion. */
+html, body { background: #17131b; }
+body { background: radial-gradient(ellipse at 72% 32%, #3b2935 0%, #211923 48%, #111015 90%); }
+/* App-colour glow otherwise sits above the machine: YouTube paints it red. */
+#ambientA, #ambientB { display:none; }
+#wallpaperShade { background: linear-gradient(0deg,rgba(5,4,9,.65),transparent 58%); }
+#petArcade { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+#petArcade .pet-caption { position:absolute; top:266px; left:132px; width:330px; color:#eeded8; }
+#petArcade .pet-caption small { font-size:18px; letter-spacing:5px; color:#cda29e; }
+#petArcade .pet-names { margin-top:19px; font-size:52px; font-weight:500; line-height:1.03; letter-spacing:-1px; }
+#petArcade .pet-names span { display:block; }
+#petArcade .pet-names span:nth-child(2) { color:#c8a8b9; }
+#petArcade .pet-caption .caption-rule { width:66px; height:3px; background:#dcb6a0; margin-top:23px; }
+#petArcade .cabinet { position:absolute; left:510px; top:210px; width:1280px; height:454px;
+  border:13px solid #caa6a2; border-radius:26px; background:#82656e;
+  box-shadow:inset 0 0 0 2px #f3d6c2,0 18px 42px rgba(0,0,0,.3); }
+#petArcade .marquee { position:absolute; top:-29px; left:440px; width:370px; height:49px;
+  border:3px solid #caa6a2; border-radius:14px; background:#302831; color:#f0d8bd;
+  text-align:center; line-height:43px; font-size:21px; font-weight:500; letter-spacing:7px; }
+#petArcade .glass-room { position:absolute; inset:25px 22px 65px; overflow:hidden;
+  border:3px solid #9d7e83; border-radius:10px; background:linear-gradient(135deg,#3a333d,#24212d 70%);
+  box-shadow:inset 0 0 0 2px #493e49,inset 0 -26px 48px rgba(0,0,0,.28); }
+#petArcade .glass-room::after { content:''; position:absolute; inset:0; pointer-events:none;
+  background:linear-gradient(115deg,transparent 14%,rgba(245,225,210,.035) 14.2%,rgba(245,225,210,.035) 20%,transparent 20.2%,transparent 74%,rgba(245,225,210,.025) 74.2%,rgba(245,225,210,.025) 82%,transparent 82.2%); }
+#petArcade .track { position:absolute; left:18px; right:18px; top:16px; height:8px; border-radius:4px;
+  background:#897a82; border-top:2px solid #dcc9c5; box-shadow:0 5px 0 #17151d; }
+#petArcade .track::before,#petArcade .track::after { content:''; position:absolute; top:-4px; width:14px; height:17px; border-radius:3px; background:#c8b6ad; }
+#petArcade .track::before { left:0; } #petArcade .track::after { right:0; }
+#petArcade .bed { position:absolute; left:0; right:0; bottom:-8px; height:91px;
+  background:radial-gradient(ellipse at 50% 30%,#bb9eaa,#796572); border-top:2px solid #d3b8bf; }
+#petArcade .bed::after { content:''; position:absolute; inset:8px 0 0; opacity:.3;
+  background-image:radial-gradient(#f5e3cf 1.5px,transparent 1.5px); background-size:20px 17px; }
+#petArcade .pet { position:absolute; width:170px; height:170px; }
+#petArcade .face { display:block; width:100%; height:100%; background-image:url('pet-heads.png');
+  background-size:200% 200%; background-repeat:no-repeat; }
+#petArcade .pet-hung { background-position:0 0; clip-path:none; }
+#petArcade .pet-baby { background-position:100% 0; clip-path:none; }
+#petArcade .pet-momo { background-position:0 100%; clip-path:none; }
+#petArcade .pet-biru { background-position:100% 100%; clip-path:none; }
+#petArcade .pool-pet { top:164px; }
+#petArcade .pool-pet.back { width:136px; height:136px; }
+#petArcade .pool-pet .face { transform-origin:50% 72%; animation:pet-idle-rock 4.2s ease-in-out infinite; }
+#petArcade .pool-pet.idle-1 .face { animation-duration:3.8s; animation-delay:-1.2s; }
+#petArcade .pool-pet.idle-2 .face { animation-duration:4.8s; animation-delay:-2.8s; }
+#petArcade .pool-pet.idle-3 .face { animation-duration:4.4s; animation-delay:-.7s; }
+#petArcade .pool-pet.target { animation:pet-vacancy 12s linear infinite; }
+/* Settle the selected face under the claw; other pets keep their own rhythm. */
+#petArcade .pool-pet.target .face { animation:pet-ready 12s ease-in-out infinite; }
+#petArcade .carriage { position:absolute; top:5px; left:0; width:170px; height:280px;
+  animation:pet-route-12 12s ease-in-out infinite; will-change:transform; }
+#petArcade .trolley { position:absolute; top:0; left:60px; width:50px; height:28px; border:3px solid #ddcfbd;
+  border-radius:8px; background:#a48e9f; box-shadow:0 4px 0 #19171c; }
+#petArcade .rope { position:absolute; left:82px; top:25px; width:6px; height:89px;
+  background:repeating-linear-gradient(0deg,#c8c9ce 0 3px,#777780 3px 5px);
+  transform-origin:top; animation:pet-cable 12s ease-in-out infinite; }
+#petArcade .elevator { position:absolute; left:0; top:31px; width:170px; height:220px;
+  animation:pet-drop-12 12s ease-in-out infinite; will-change:transform; }
+#petArcade .lift-rig { position:relative; width:170px; height:220px; transform-origin:85px 0; }
+#petArcade[data-row="back"] .elevator { top:18px; }
+#petArcade[data-row="back"] .lift-rig { transform:scale(.8); }
+#petArcade .claw { position:absolute; left:37px; top:0; width:96px; height:82px; overflow:visible; }
+#petArcade .claw path { fill:none; stroke:#ddd7ce; stroke-width:7; stroke-linecap:round; stroke-linejoin:round; }
+#petArcade .claw .prong-left { transform-origin:46px 26px; animation:pet-close-left 12s ease infinite; }
+#petArcade .claw .prong-right { transform-origin:50px 26px; animation:pet-close-right 12s ease infinite; }
+#petArcade .claw .hub { fill:#b59dac; stroke:#eedac8; stroke-width:3; }
+#petArcade .caught { position:absolute; left:0; top:46px; animation:pet-caught 12s linear infinite; }
+#petArcade .caught .face { animation:pet-swing 12s ease-in-out infinite; transform-origin:50% 15%; }
+#petArcade .bottom-panel { position:absolute; left:22px; right:22px; bottom:13px; height:42px;
+  display:flex; align-items:center; justify-content:space-between; }
+#petArcade .pet-labels { font-size:20px; letter-spacing:3px; color:#f8e1ce; }
+#petArcade .status-lights { display:flex; gap:12px; margin-right:8px; }
+#petArcade .status-lights i { display:block; width:10px; height:10px; border-radius:50%; background:#ead9be; box-shadow:0 0 7px #ddc1a4; }
+#petArcade .prize-door { width:122px; height:34px; border-radius:6px; border:2px solid #ad929b; background:#241f29; }
+@keyframes pet-caught { 0%,37% {opacity:0;transform:translateY(0)} 39%,77% {opacity:1;transform:translateY(0)} 85% {opacity:1;transform:translateY(140px)} 90%,100% {opacity:0;transform:translateY(140px)} }
+@keyframes pet-vacancy { 0%,37% {opacity:1} 39%,100% {opacity:0} }
+@keyframes pet-close-left { 0%,34%,86%,100% {transform:rotate(0)} 40%,80% {transform:rotate(-23deg)} }
+@keyframes pet-close-right { 0%,34%,86%,100% {transform:rotate(0)} 40%,80% {transform:rotate(23deg)} }
+@keyframes pet-idle-rock {
+  0%,100% {transform:translateY(0) rotate(-8deg)}
+  50% {transform:translateY(-3px) rotate(8deg)}
+}
+@keyframes pet-ready {
+  0%,100% {transform:rotate(-4deg)}
+  12% {transform:translateY(-2px) rotate(5deg)}
+  25%,85% {transform:translateY(0) rotate(0)}
+}
+@keyframes pet-swing {
+  0%,40%,78%,100% {transform:rotate(0)}
+  47% {transform:rotate(-12deg)} 54% {transform:rotate(14deg)}
+  61% {transform:rotate(-10deg)} 68% {transform:rotate(7deg)}
+  74% {transform:rotate(-3deg)} 85% {transform:rotate(12deg)}
+}
+body.pet-motion-paused #petArcade *,body.scrolled #petArcade * { animation-play-state:paused !important; }
+#petArcade.motion-reset * { animation-name:none !important; }
+@media(prefers-reduced-motion:reduce) { #petArcade * { animation:none !important; } #petArcade .carriage {transform:translateX(1030px)} #petArcade .caught {opacity:0} #petArcade .rope {transform:scaleY(.25)} }
