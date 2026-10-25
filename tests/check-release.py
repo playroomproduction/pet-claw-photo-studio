@@ -211,6 +211,10 @@ def check_source_tree(root: Path, theme_path: Path | None) -> tuple[list[str], i
 
     for path in sorted(root.rglob("*")):
         relative = path.relative_to(root).as_posix()
+        # Working-copy Git metadata is never a distributable asset. Archives
+        # are built from REQUIRED_FILES, not by copying the checkout directory.
+        if relative == ".git" or relative.startswith(".git/"):
+            continue
         if path.is_symlink():
             errors.append(f"{relative}: symlinks are not allowed in the public tree")
             continue
