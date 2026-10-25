@@ -17,3 +17,41 @@ For the LG webOS port https://github.com/OmkarK97/webos-vibehack at commit 31a51
 The scene uses a 1920 x 1080 launcher canvas. Theme integration hides the launcher's two ambient app-color glows. It does not intercept Home, change the TV operating system, remove apps, or fix YouTube freezes. Developer Mode sessions can expire. Keep your rollback app package.
 
 Animation layout was accepted on one LG webOS 11.2.0 device. The generalized image exports are browser-tested; each new TV/source variant needs its own test. Uploaded names are inserted as text. The atlas contains the four selected images. Review your exported ZIP before sharing it.
+
+
+## Use Claude / ChatGPT to help install
+
+Full step-by-step guide and bilingual copy/paste prompt:
+https://github.com/bypinkland-mi/pet-claw-photo-studio/blob/main/INSTALL_WITH_AI.md
+
+This ZIP is theme assets, not the full launcher or an IPK. An assistant with local
+file/Terminal access can obtain the pinned LG launcher source above, apply these
+four files and package it. A plain AI chat can only guide you through local commands.
+Do not replace the launcher's app/index.html with the photo editor or standalone
+wallpaper HTML; preserve its original app scripts and appinfo.json.
+
+Copy this prompt, granting your assistant local access to this ZIP:
+
+```text
+Help me apply this Pet Claw theme ZIP to LG webOS CleanYourTV and install it.
+Read the complete guide at
+https://github.com/bypinkland-mi/pet-claw-photo-studio/blob/main/INSTALL_WITH_AI.md
+First check your local tool access, my computer OS, TV model/webOS, my TV IP,
+and whether I already have a launcher. Obtain the guide's pinned upstream source
+or back up my existing source in a separate working copy. Read its scripts before
+running them. Apply this ZIP's four theme files following this README, preserve
+the launcher HTML/scripts/appinfo and all licenses, and add each tag only once.
+Use my own locally synced TV apps/icons. Preview before packaging. I will handle
+LG login, Developer Mode/reboot, Key Server, local passphrase entry and permission
+prompts. Keep credentials/profiles private. Build using official webOS CLI and
+install only the verified launcher app with a rollback backup. No reset/root,
+firmware/system-app changes or automatic Home watcher. Verify package/install/
+running readback separately from my TV visual/remote/app-opening confirmation.
+Explain reopening the launcher, rollback and Developer Mode expiry.
+```
+
+繁中：先讀以上guide，將ZIP交畀有本機檔案／Terminal權限嘅Claude／ChatGPT，
+請佢核對你部電腦同LG、取得指定upstream並備份，按呢份README加入主題，
+保留launcher原有HTML/scripts，再用LG官方工具打包安裝。LG登入、Developer
+Mode／Key Server、配對碼同電視連線批准由你親自處理。純聊天版AI冇本機
+權限時只會帶你逐步執行；ZIP包含你揀嘅相，傳入聊天亦會分享畀該服務。

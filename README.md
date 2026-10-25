@@ -2,11 +2,19 @@
 
 Turn four pet portraits into an animated claw-machine wallpaper. Choose your own PNG, JPG or WebP files, add names, adjust the crop and zoom, then download a standalone wallpaper or a CleanYourTV theme ZIP.
 
-[![Pet claw-machine demonstration](demo/poster.png)](https://github.com/bypinkland-mi/pet-claw-photo-studio/releases/download/v1.0.0/pet-claw-demo.mp4)
+[![Pet claw-machine demonstration](demo/poster.png)](https://github.com/bypinkland-mi/pet-claw-photo-studio/releases/download/v1.0.1/pet-claw-demo.mp4)
 
-[Download v1.0.0](https://github.com/bypinkland-mi/pet-claw-photo-studio/releases/tag/v1.0.0) · [Watch the 48-second demo](https://github.com/bypinkland-mi/pet-claw-photo-studio/releases/download/v1.0.0/pet-claw-demo.mp4)
+[Download v1.0.1](https://github.com/bypinkland-mi/pet-claw-photo-studio/releases/tag/v1.0.1) · [Watch the 48-second demo](https://github.com/bypinkland-mi/pet-claw-photo-studio/releases/download/v1.0.1/pet-claw-demo.mp4)
 
-Version: **v1.0.0**. No account, API key, payment or installation is required for the editor.
+Version: **v1.0.1**. No account, API key, payment or installation is required for the editor.
+
+## Put it on your LG TV with Claude / ChatGPT
+
+**Start here: [AI-assisted installation guide + copy/paste prompt](INSTALL_WITH_AI.md).** It explains which file to download, how your assistant obtains the LG CleanYourTV source, and which steps you perform on the TV.
+
+The flow is **four photos → theme ZIP → Claude/ChatGPT with local tools → combine with the LG launcher → build/install IPK → confirm on your TV**. This download is the editor/theme; the full launcher is obtained separately from the credited upstream. A plain chat without computer access can guide you, but cannot install it for you.
+
+**繁中：[安裝步驟＋可直接貼畀 Claude／ChatGPT 嘅指令](INSTALL_WITH_AI.md)**。先用 editor 換四張相、匯出 theme ZIP，再交畀有本機權限嘅 AI 協助整合。LG 登入、Developer Mode 同電視確認由你操作。
 
 ## Download and use
 
@@ -46,6 +54,8 @@ Independent project by byPINKLAND; no affiliation or endorsement by CleanYourTV'
 相片設計上只喺瀏覽器記憶體處理；下載檔案會包含你揀嘅圖片。預設寵物圖係 AI 生成示範素材，使用範圍見 [MEDIA.md](MEDIA.md)。
 
 ## Release verification
+
+v1.0.1 adds installation documentation, AI prompts, and the same instructions inside newly exported theme ZIPs. It does not bundle the launcher or change TV control behavior. The editor export was rechecked for the new README; the broader UI checks below are the v1.0.0 baseline.
 
 Checked on 25 October 2026 in a desktop Chromium-based browser: four synthetic PNG replacements, name editing (including HTML-like input rendered literally), zoom/pan/circle controls, pause/resume, HTML and ZIP downloads, and reload returning to the samples. The downloaded custom HTML was byte-for-byte identical to the document rendered in the preview. Both default and custom ZIPs passed manifest, notice-byte, PNG-size and CRC checks. Source allowlist/privacy checks passed; inline scripts passed JavaScript syntax checks.
 

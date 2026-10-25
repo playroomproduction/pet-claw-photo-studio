@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 # Exact public paths. New distributable files must be reviewed and added here.
 REQUIRED_FILES = {
+    "INSTALL_WITH_AI.md",
     "LICENSE",
     "MEDIA.md",
     "PRIVACY.md",
